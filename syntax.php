@@ -328,7 +328,7 @@ class syntax_plugin_switchpanel extends DokuWiki_Syntax_Plugin {
 		};
 		
 		// construction of SVG
-		$sSvg = '<svg xmlns="http://www.w3.org/2000/svg" height="'.$iHeightSvg.'px" width="'.$iWidthSvg.'px">'.
+		$sSvg = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="'.$iHeightSvg.'px" width="'.$iWidthSvg.'px">'.
 			'<metadata>image/svg+xml</metadata>'.
 			'<rect fill="'.$opt[ 'switchColor' ].'" height="'.$iHeightSvg.'px" width="'.$iWidthSvg.'px" x="0" y="0" rx="'.( $opt[ 'showEars' ] ? 10 : 5 ).'" ry="'.( $opt[ 'showEars' ] ? 10 : 5 ).'" />';
 		
