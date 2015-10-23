@@ -335,12 +335,14 @@ class syntax_plugin_switchpanel extends DokuWiki_Syntax_Plugin {
 		// inclusion of the logo and bolts
 		if( $opt[ 'showEars' ] ){
 			require_once( $sPathTemplateClass.'switchpanel.screw.none.class.php' );
-			if( $opt[ 'logoLink' ] != '' ){
-				$sSvg .= '<a xlink:href="'.$opt[ 'logoLink' ].'" target="_blank" style="text-decoration:none">';
-			}
-			$sSvg .= '<image x="'.( ( $opt[ 'elementWidth' ] * 2 ) - ( $opt[ 'elementSeparatorWidth' ] + 30 ) ).'" y="'.$opt[ 'elementSeparatorHeight' ].'" width="30" height="30" xlink:href="'.$opt[ 'logo' ].'" />';
-			if( $opt[ 'logoLink' ] != '' ){
-				$sSvg .= '</a>';
+			if( !in_array( $opt[ 'logo' ], array( '', 'none' ), true ) ){
+				if( $opt[ 'logoLink' ] != '' ){
+					$sSvg .= '<a xlink:href="'.$opt[ 'logoLink' ].'" target="_blank" style="text-decoration:none">';
+				}
+				$sSvg .= '<image x="'.( ( $opt[ 'elementWidth' ] * 2 ) - ( $opt[ 'elementSeparatorWidth' ] + 30 ) ).'" y="'.$opt[ 'elementSeparatorHeight' ].'" width="30" height="30" xlink:href="'.$opt[ 'logo' ].'" />';
+				if( $opt[ 'logoLink' ] != '' ){
+					$sSvg .= '</a>';
+				}
 			}
 			$iHeightScrew = $iHeightSvg - ( ( $opt[ 'elementSeparatorHeight' ] * 2 ) + $opt[ 'screwHeight' ] );
 			$iNbrScrews = floor( $iHeightScrew / $opt[ 'screwHeightSpace' ] );
