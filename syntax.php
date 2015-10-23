@@ -261,6 +261,9 @@ class syntax_plugin_switchpanel extends DokuWiki_Syntax_Plugin {
 			if( $iNbrElementsWidth < $iDiff ){
 				$iNbrElementsWidth = $iDiff;
 			}
+			if( isset( $oElement[ 'options' ][ 'number' ] ) && $oElement[ 'options' ][ 'number' ] > $iNbrElementsWidth ){
+				$iNbrElementsWidth = $oElement[ 'options' ][ 'number' ];
+			}
 			
 			// re-index elements
 			ksort( $oElement[ 'data' ] );
