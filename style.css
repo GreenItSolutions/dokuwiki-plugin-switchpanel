@@ -1,0 +1,30 @@
+#switchpanel_tooltip {
+	position: fixed;
+	z-index: 10;
+	display: none;
+	border: 2px solid #9DC4A4;
+	border-radius:4px;
+	color: #214515;
+	background: #E1FCE2;
+	padding:5px;
+}
+.switchpanel_tooltip_title {
+	
+	background: #ccc;
+	background-image: -webkit-linear-gradient(top, #3A879B8, #2E629D);
+	position: relative;
+	padding: 5px 35px 5px 10px;
+	overflow: hidden;
+	border-width: 0 0 1px;
+	font-weight: bold;
+}
+.switchpanel_tooltip_text{
+	padding:10px 0;
+}
+.switchpanel_tooltip_link{
+	border-radius: 5px;
+	border: 1px solid #90C3D4;
+	background: #DFEDF2;
+	color: #176782;
+	padding:0 5px;
+}
