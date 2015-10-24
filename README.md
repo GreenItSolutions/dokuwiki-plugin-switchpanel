@@ -2,7 +2,7 @@
 
 ![](https://raw.github.com/GreenItSolutions/assets/master/dokuwiki/switchpanel/switchpanel_1.png)
 
-## Coloring catch networks
+## Coloring networks
 
 ![](https://raw.github.com/GreenItSolutions/assets/master/dokuwiki/switchpanel/switchpanel_2.png)
 
@@ -11,7 +11,7 @@
 ```
 <switchpanel>
 ==text
-Coloring catch networks
+Coloring networks
 ==line
 1,A1:color=#FF6164
 2,B1:color=#FF61ED
