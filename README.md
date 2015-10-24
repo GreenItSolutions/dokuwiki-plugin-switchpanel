@@ -115,7 +115,7 @@ Popup message information and link
 Text bar information
 ==line:number=8
 ==text:bgColor=#80cc28,color=#fff,size=20,brColor=#1D611F,brRadius=2
-From Green It Solution
+By Green It Solution
 ==line
 </switchpanel>
 ```
