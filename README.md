@@ -144,12 +144,10 @@ Screw style
 ### Example code :
 
 ```
-<switchpanel>
+<switchpanel logo=none>
 ==text
-Text bar information
+Hide logo
 ==line:number=8
-==text:bgColor=#80cc28,color=#fff,size=20,brColor=#1D611F,brRadius=2
-From Green It Solution
 ==line
 </switchpanel>
 ```
