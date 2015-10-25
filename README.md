@@ -184,4 +184,8 @@ Hide logo
 ==text:bgColor=(backgroud color),color=(text color),size=(text size),brColor=(border color),brRadius=(border radius)
 
 ==heightBar:heigth=(height bar)
+
+# this is a comment
+
+</switchpanel>
 ```
