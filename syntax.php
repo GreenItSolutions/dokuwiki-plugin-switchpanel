@@ -148,7 +148,7 @@ class syntax_plugin_switchpanel extends DokuWiki_Syntax_Plugin {
 
 			// recovery of the line
 			$sLine = trim( $sLine );
-			if( $sLine == '' ){
+			if( $sLine == '' || substr( $sLine, 0, 1 ) == '#' ){
 				continue;
 			}
 
