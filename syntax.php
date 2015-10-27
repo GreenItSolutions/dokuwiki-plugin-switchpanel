@@ -46,6 +46,8 @@ class syntax_plugin_switchpanel extends DokuWiki_Syntax_Plugin {
 			'logoLink'=>'http://www.greenitsolutions.fr/',
 			'showEars'=>true,
 			'case'=>'rj45',
+			'group'=>0,
+			'groupSeparatorWidth'=>18,
 			'color'=>'#ccc',
 			'elementWidth'=>36,
 			'elementHeight'=>45,
@@ -282,7 +284,9 @@ class syntax_plugin_switchpanel extends DokuWiki_Syntax_Plugin {
 		}
 
 		// calculates the width
-		$iWidthSvg = ( $opt[ 'showEars' ] ? ( $opt[ 'elementWidth' ] * 4 ) : ( $opt[ 'elementSeparatorWidth' ] * 2 ) ) +
+		$iGroup = $opt[ 'group' ];
+		$iWidthSvg = ( ( $iGroup > 0 ) ?  ( floor( $iNbrElementsWidth / $iGroup ) * $opt[ 'groupSeparatorWidth' ] ) : 0 ) + // if there are groups
+			( $opt[ 'showEars' ] ? ( $opt[ 'elementWidth' ] * 4 ) : ( $opt[ 'elementSeparatorWidth' ] * 2 ) ) + // if show Ears
 			( $iNbrElementsWidth * $opt[ 'elementWidth' ] ) +
 			( $iNbrElementsWidth > 1 ? ( ( $iNbrElementsWidth - 1 ) * $opt[ 'elementSeparatorWidth' ] ) : 0 );
 
@@ -378,6 +382,11 @@ class syntax_plugin_switchpanel extends DokuWiki_Syntax_Plugin {
 						$iIndexX += $opt[ 'elementSeparatorWidth' ];
 					}
 					$iIndexX += $opt[ 'elementWidth' ];
+
+					// if there are groups
+					if( $iGroup > 0 && ( ( $i + 1 ) / $iGroup ) == floor( ( $i + 1 ) / $iGroup ) ){
+						$iIndexX += $opt[ 'groupSeparatorWidth' ];
+					}
 				}
 				$iIndexY += $opt[ 'elementHeight' ];
 			}else if( $oElement[ 'type' ] == 'text' ){
@@ -399,15 +408,15 @@ class syntax_plugin_switchpanel extends DokuWiki_Syntax_Plugin {
 		$sSvg .= '</svg>';
 		
 		// generation rendering
-        if ($mode != 'odt') {
-		    $renderer->doc .= '<div>'.$sSvg.'</div>';
-        } else {
-            // When exporting to ODT format always make the switchpannel as wide
-            // as the whole page without margins (but keep the width/height relation!). 
-            $widthInCm = $renderer->_getAbsWidthMindMargins();
-            $heightInCm = $widthInCm * ($iHeightSvg/$iWidthSvg);
-            $renderer->_addStringAsSVGImage($sSvg, $widthInCm.'cm', $heightInCm.'cm');
-        }
+		if ($mode != 'odt') {
+			$renderer->doc .= '<div>'.$sSvg.'</div>';
+		} else {
+			// When exporting to ODT format always make the switchpannel as wide
+			// as the whole page without margins (but keep the width/height relation!). 
+			$widthInCm = $renderer->_getAbsWidthMindMargins();
+			$heightInCm = $widthInCm * ($iHeightSvg/$iWidthSvg);
+			$renderer->_addStringAsSVGImage($sSvg, $widthInCm.'cm', $heightInCm.'cm');
+		}
 		return true;
 	}
 }
