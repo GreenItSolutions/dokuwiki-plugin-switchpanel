@@ -399,7 +399,15 @@ class syntax_plugin_switchpanel extends DokuWiki_Syntax_Plugin {
 		$sSvg .= '</svg>';
 		
 		// generation rendering
-		$renderer->doc .= '<div>'.$sSvg.'</div>';
+        if ($mode != 'odt') {
+		    $renderer->doc .= '<div>'.$sSvg.'</div>';
+        } else {
+            // When exporting to ODT format always make the switchpannel as wide
+            // as the whole page without margins (but keep the width/height relation!). 
+            $widthInCm = $renderer->_getAbsWidthMindMargins();
+            $heightInCm = $widthInCm * ($iHeightSvg/$iWidthSvg);
+            $renderer->_addStringAsSVGImage($sSvg, $widthInCm.'cm', $heightInCm.'cm');
+        }
 		return true;
 	}
 }
