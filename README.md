@@ -152,6 +152,24 @@ Hide logo
 </switchpanel>
 ```
 
+## Group ports
+
+![](https://raw.github.com/GreenItSolutions/assets/master/dokuwiki/switchpanel/switchpanel_10.png)
+
+### Example code :
+
+```
+<switchpanel group="6">
+==line:number=12
+1,PC1
+2,PC2
+3,PC3
+6,??
+==line
+1,AB
+</switchpanel>
+```
+
 ## All options of "switchpanel"
 
 ```
@@ -160,6 +178,8 @@ Hide logo
     logoLink="URL OF LINK"
     showEars=true / false
     case="rj45" (case a default)
+    group="0"
+    groupSeparatorWidth="18"
     color="#ccc" (case color default)
     elementWidth="36"
     elementHeight="45"
