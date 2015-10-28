@@ -283,9 +283,18 @@ class syntax_plugin_switchpanel extends DokuWiki_Syntax_Plugin {
 			$oElement[ 'data' ] = $oData;
 		}
 
+		// if there are groups
+		$iWidthGroup = 0;
+		if( $opt[ 'group' ] > 0 ){
+			$iWidthGroup = floor( $iNbrElementsWidth / $opt[ 'group' ] ) * $opt[ 'groupSeparatorWidth' ];
+			if( $iNbrElementsWidth % $opt[ 'group' ] == 0 ){
+				$iWidthGroup -= $opt[ 'groupSeparatorWidth' ];
+			}
+		}
+
 		// calculates the width
 		$iGroup = $opt[ 'group' ];
-		$iWidthSvg = ( ( $iGroup > 0 ) ?  ( floor( $iNbrElementsWidth / $iGroup ) * $opt[ 'groupSeparatorWidth' ] ) : 0 ) + // if there are groups
+		$iWidthSvg = $iWidthGroup +
 			( $opt[ 'showEars' ] ? ( $opt[ 'elementWidth' ] * 4 ) : ( $opt[ 'elementSeparatorWidth' ] * 2 ) ) + // if show Ears
 			( $iNbrElementsWidth * $opt[ 'elementWidth' ] ) +
 			( $iNbrElementsWidth > 1 ? ( ( $iNbrElementsWidth - 1 ) * $opt[ 'elementSeparatorWidth' ] ) : 0 );
@@ -384,7 +393,7 @@ class syntax_plugin_switchpanel extends DokuWiki_Syntax_Plugin {
 					$iIndexX += $opt[ 'elementWidth' ];
 
 					// if there are groups
-					if( $iGroup > 0 && ( ( $i + 1 ) / $iGroup ) == floor( ( $i + 1 ) / $iGroup ) ){
+					if( $opt[ 'group' ] > 0 && ( $i + 1 < $iNbrElementsWidth ) && ( ( $i + 1 ) % $iGroup ) == 0 ){
 						$iIndexX += $opt[ 'groupSeparatorWidth' ];
 					}
 				}
