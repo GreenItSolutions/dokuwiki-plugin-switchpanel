@@ -38,11 +38,12 @@ Coloring networks
 All types cases
 ==line
 1,rj45:case=rj45
-2,of,of:case=of
-3,2of,2of:case=2of
-4,none:case=none
-5,serial:case=serial
-6,close:case=close
+2,of:case=of
+3,2of:case=2of
+4,gbic:case=gbic
+5,none:case=none
+6,serial:case=serial
+7,close:case=close
 </switchpanel>
 ```
 
