@@ -352,10 +352,6 @@ class syntax_plugin_switchpanel extends DokuWiki_Syntax_Plugin {
 			if( !in_array( $opt[ 'logo' ], array( '', 'none' ), true ) ){
 				if( $opt[ 'logoLink' ] != '' ){
 					$sSvg .= '<a xlink:href="'.$opt[ 'logoLink' ].'" target="'.( $opt[ 'target' ] ).'" style="text-decoration:none">';
-					
-					//var_dump( $opt );
-					
-					//exit();
 				}
 				$sSvg .= '<image x="'.( ( $opt[ 'elementWidth' ] * 2 ) - ( $opt[ 'elementSeparatorWidth' ] + 30 ) ).'" y="'.$opt[ 'elementSeparatorHeight' ].'" width="30" height="30" xlink:href="'.$opt[ 'logo' ].'" />';
 				if( $opt[ 'logoLink' ] != '' ){
