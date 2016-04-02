@@ -3,7 +3,7 @@
 		public static function getSvg( $oCase, $iX, $iY, $opt ){
 		$sSvg = '';
 			if( isset( $oCase[ 'options' ][ 'link' ] ) ){
-				$sSvg .= '<a xlink:href="'.$oCase[ 'options' ][ 'link' ].'" target="_blank" style="text-decoration:none">';
+				$sSvg .= '<a xlink:href="'.$oCase[ 'options' ][ 'link' ].'" target="'.( isset( $oCase[ 'options' ][ 'target' ] ) ? $oCase[ 'options' ][ 'target' ] : $opt[ 'target' ] ).'" style="text-decoration:none">';
 			}
 			if( isset( $oCase[ 'options' ][ 'text' ] ) ){
 				$sLabel = str_replace( "\\", "\\'", isset( $oCase[ 'label' ] ) ? $oCase[ 'label' ] : '' );

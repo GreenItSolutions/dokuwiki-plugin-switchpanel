@@ -16,7 +16,7 @@ if(!defined('DOKU_INC')) die();
 class syntax_plugin_switchpanel extends DokuWiki_Syntax_Plugin {
 	private $_sName = "switchpanel";
 	private $_oTagsContent = array( 'line'=>array( 'number', 'color', 'case' ), 'text'=>array( 'bgColor', 'color', 'size', 'brColor', 'brRadius' ), 'heightBar'=>array( 'height' ) );
-	private $_oTagsItemsContent = array( 'line_items'=>array( 'color', 'text', 'link', 'case' ) );
+	private $_oTagsItemsContent = array( 'line_items'=>array( 'color', 'text', 'link', 'case', 'target' ) );
 
 	function getType(){ return 'substition'; }
 	function getSort(){ return 155; }
@@ -44,6 +44,7 @@ class syntax_plugin_switchpanel extends DokuWiki_Syntax_Plugin {
 		$opt = array(
 			'logo'=>DOKU_BASE.'lib/plugins/switchpanel/images/greenIt.svg',
 			'logoLink'=>'http://www.greenitsolutions.fr/',
+			'target'=>'_blank',
 			'showEars'=>true,
 			'case'=>'rj45',
 			'group'=>0,
@@ -350,7 +351,11 @@ class syntax_plugin_switchpanel extends DokuWiki_Syntax_Plugin {
 			require_once( $sPathTemplateClass.'switchpanel.screw.none.class.php' );
 			if( !in_array( $opt[ 'logo' ], array( '', 'none' ), true ) ){
 				if( $opt[ 'logoLink' ] != '' ){
-					$sSvg .= '<a xlink:href="'.$opt[ 'logoLink' ].'" target="_blank" style="text-decoration:none">';
+					$sSvg .= '<a xlink:href="'.$opt[ 'logoLink' ].'" target="'.( $opt[ 'target' ] ).'" style="text-decoration:none">';
+					
+					//var_dump( $opt );
+					
+					//exit();
 				}
 				$sSvg .= '<image x="'.( ( $opt[ 'elementWidth' ] * 2 ) - ( $opt[ 'elementSeparatorWidth' ] + 30 ) ).'" y="'.$opt[ 'elementSeparatorHeight' ].'" width="30" height="30" xlink:href="'.$opt[ 'logo' ].'" />';
 				if( $opt[ 'logoLink' ] != '' ){
