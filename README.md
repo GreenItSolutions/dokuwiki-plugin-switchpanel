@@ -177,6 +177,7 @@ Hide logo
 <switchpanel
     logo="URL OF LOGO"
     logoLink="URL OF LINK"
+    target="_blank"
     showEars=true / false
     case="rj45" (case a default)
     group="0"
@@ -200,7 +201,7 @@ Hide logo
     >
  
 ==line:number=(number of cases),color=(backgroud color),case=(type of case)
-1,label,title:color=(backgroud color),text=(text of popup message),link=(url of link),case=(type of case)
+1,label,title:color=(backgroud color),text=(text of popup message),link=(url of link),case=(type of case),target=(type of link target)
 
 ==text:bgColor=(backgroud color),color=(text color),size=(text size),brColor=(border color),brRadius=(border radius)
 
