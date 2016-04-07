@@ -239,7 +239,7 @@ class syntax_plugin_switchpanel extends DokuWiki_Syntax_Plugin {
 	/*
 	 * Create output
 	 */
-	function render($mode, &$renderer, $opt) {
+	function render($mode, Doku_Renderer $renderer, $opt) {
 		if( $mode == 'metadata' ){ return false; }
 
 		// determines the maximum number of elements in width &
