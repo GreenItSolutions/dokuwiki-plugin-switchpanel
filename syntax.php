@@ -5,6 +5,8 @@
  * @license	GPL 2 (http://www.gnu.org/licenses/gpl.html)
  * @author	 Bertrand Fruchet <bertrand@greenitsolutions.fr>
  * @author	 Emmanuel Hidalgo <manu@greenitsolutions.fr>
+ * 
+ * Based on the dokuwiki-plugin-patchpanel plugin (https://github.com/grantemsley/dokuwiki-plugin-patchpanel) by Grant Emsley <grant@emsley.ca>
  */
 // must be run within Dokuwiki
 if(!defined('DOKU_INC')) die();
