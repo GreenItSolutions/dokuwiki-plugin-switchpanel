@@ -421,7 +421,7 @@ class syntax_plugin_switchpanel extends DokuWiki_Syntax_Plugin {
 		
 		// generation rendering
 		if ($mode != 'odt') {
-			$renderer->doc .= '<div>'.$sSvg.'</div>';
+			$renderer->doc .= '<div style="overflow-x:auto;">'.$sSvg.'</div>';
 		} else {
 			// When exporting to ODT format always make the switchpannel as wide
 			// as the whole page without margins (but keep the width/height relation!). 
