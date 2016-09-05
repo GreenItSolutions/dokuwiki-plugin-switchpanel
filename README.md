@@ -171,6 +171,24 @@ Hide logo
 </switchpanel>
 ```
 
+## Label line
+
+![](https://raw.github.com/GreenItSolutions/assets/master/dokuwiki/switchpanel/switchpanel_11.png)
+
+### Example code :
+
+```
+<switchpanel group="6">
+==line:number=12,labelLeft=01,labelRight=A1,colorLabelRight=#FF6164
+1,PC1
+2,PC2
+3,PC3
+6,??
+==line:labelLeft=02
+1,AB
+</switchpanel>
+```
+
 ## All options of "switchpanel"
 
 ```
