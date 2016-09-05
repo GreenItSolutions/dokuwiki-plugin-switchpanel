@@ -1,27 +1,17 @@
-function switchpanel(){
-	if( jQuery( '#switchpanel_tooltip' ).length == 0 ){
-		jQuery( '<div id="switchpanel_tooltip"></div>' ).appendTo( 'body' );
+function patchpanel_create_tooltip_div() {
+	var tooltip = document.getElementById("patchpanel_tooltip");
+	if (!tooltip) {
+		tooltip = document.createElement('div');
+		tooltip.setAttribute("id", "patchpanel_tooltip");
+		document.body.appendChild(tooltip);
 	}
-	
-	this.showToolTip = function( oEvent, sLabel, sTitle, sText, sLink ){
-		var sHtml = '';
-		if( ( sLabel + sTitle ) != '' ){
-			sHtml += '<div class="switchpanel_tooltip_title">' + sLabel + ( sTitle != '' ? ' : ' : '' ) + sTitle + '</div>';
-		}
-		sHtml += '<div class="switchpanel_tooltip_text">' + sText + '</div>';
-		if( sLink != '' ){
-			sHtml += '<div class="switchpanel_tooltip_link">' + sLink + '</div>';
-		}
-		jQuery( '#switchpanel_tooltip' )
-			.html( sHtml )
-			.css( { left: oEvent.clientX + 10, top: oEvent.clientY + 10, display: 'block' } );
-	};
-	
-	this.hideToolTip = function(){
-		jQuery( '#switchpanel_tooltip' ).css( { display: 'none' } );
-	};
 }
 
-jQuery( document ).ready( function(){
-	window.oSwitchPanel = new switchpanel();
-} );
+function patchpanel_toggle_vis(element,vis_mode) {
+	element.style.display = patchpanel_toggle(element.style.display,"none",vis_mode);
+	return element.style.display!="none";
+}
+
+function patchpanel_toggle(v,a,b) {
+	return (v==a)?b:a;
+}
