@@ -218,7 +218,7 @@ Hide logo
     switchColor="#808080" (backgroud color default)
     >
  
-==line:number=(number of cases),color=(backgroud color),case=(type of case)
+==line:number=(number of cases),color=(backgroud color),case=(type of case),labelLeft=(label left),labelRight=(label right),colorLabelLeft=(color of label left),colorLabelRight=(color of label right)
 1,label,title:color=(backgroud color),text=(text of popup message),link=(url of link),case=(type of case),target=(type of link target)
 
 ==text:bgColor=(backgroud color),color=(text color),size=(text size),brColor=(border color),brRadius=(border radius)
