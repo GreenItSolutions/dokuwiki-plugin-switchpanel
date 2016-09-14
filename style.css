@@ -1,15 +1,14 @@
-#patchpanel_tooltip {
+#switchpanel_tooltip {
 	position: fixed;
 	z-index: 10;
 	display: none;
-	border: 3px solid #959FA9;
-	border-radius: 3px;
-	color: #343434;
-	background: #fff;
+	border: 2px solid #9DC4A4;
+	border-radius:4px;
+	color: #214515;
+	background: #E1FCE2;
+	padding:5px;
 }
-
-
-#patchpanel_tooltip .title {
+.switchpanel_tooltip_title {
 	
 	background: #ccc;
 	background-image: -webkit-linear-gradient(top, #3A879B8, #2E629D);
@@ -19,35 +18,13 @@
 	border-width: 0 0 1px;
 	font-weight: bold;
 }
-#patchpanel_tooltip .content {
-	position: relative;
-	padding: 5px 9px;
-	overflow: hidden;
-	text-align: left;
+.switchpanel_tooltip_text{
+	padding:10px 0;
 }
-
-#patchpanel_tooltip table {
-	border: none;
-	padding: 0px;
-	margin: 0px;
-}
-
-#patchpanel_tooltip p {
-	margin: 0px 0px;;
-}
-
-div.patchpanel {
-	display: inline-block;
-	padding: 20px;
-	vertical-align: top;
-	overflow: none;
-	max-width: 100%;
-}
-
-div.patchpanel_container {
-	display:block;
-	line-height:0;
-	overflow-x: auto; 
-	overflow-y: hidden;
-	width: 100%;
+.switchpanel_tooltip_link{
+	border-radius: 5px;
+	border: 1px solid #90C3D4;
+	background: #DFEDF2;
+	color: #176782;
+	padding:0 5px;
 }
