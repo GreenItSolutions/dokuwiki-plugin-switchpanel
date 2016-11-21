@@ -14,7 +14,16 @@ function switchpanel(){
 		}
 		jQuery( '#switchpanel_tooltip' )
 			.html( sHtml )
-			.css( { left: oEvent.clientX + 10, top: oEvent.clientY + 10, display: 'block' } );
+			.css( { top: oEvent.clientY + 20, display: 'block' } );
+		
+		// calcul positioning coefficient to the left
+		var iPosPopup = jQuery( oEvent.target ).attr( 'x' );
+		var iWidthSvg = jQuery( oEvent.target ).closest( 'svg' ).attr( 'width' ).replace( 'px', '' );
+		var iCoef = iPosPopup / iWidthSvg;
+		
+		// Move popup to the left
+		jQuery( '#switchpanel_tooltip' )
+			.css( { left: oEvent.clientX - ( jQuery( '#switchpanel_tooltip' ).width() * iCoef ) } );
 	};
 	
 	this.hideToolTip = function(){
