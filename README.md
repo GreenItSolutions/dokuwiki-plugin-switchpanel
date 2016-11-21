@@ -98,7 +98,7 @@ Popup message information and link
 ==line:number=8
 ==line
 1,AA
-5,FO:case=fo,color="#80cc28",text="Green It Solutions",link="http://www.greenitsolutions.fr/"
+5,FO:case=fo,color="#80cc28",text="Green It Solutions",link="http://www.greenitsolutions.fr/",textlink="http://www.greenitsolutions.fr/"
 ==line
 ==line
 </switchpanel>
