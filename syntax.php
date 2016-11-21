@@ -18,7 +18,7 @@ if(!defined('DOKU_INC')) die();
 class syntax_plugin_switchpanel extends DokuWiki_Syntax_Plugin {
 	private $_sName = "switchpanel";
 	private $_oTagsContent = array( 'line'=>array( 'number', 'color', 'case', 'labelLeft', 'colorLabelLeft', 'labelRight', 'colorLabelRight' ), 'text'=>array( 'bgColor', 'color', 'size', 'brColor', 'brRadius' ), 'heightBar'=>array( 'height' ) );
-	private $_oTagsItemsContent = array( 'line_items'=>array( 'color', 'text', 'link', 'case', 'target' ) );
+	private $_oTagsItemsContent = array( 'line_items'=>array( 'color', 'text', 'link', 'case', 'target', 'textlink' ) );
 
 	function getType(){ return 'substition'; }
 	function getSort(){ return 155; }
