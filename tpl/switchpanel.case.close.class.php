@@ -10,6 +10,9 @@
 				$sTitle = str_replace( "\\", "\\'", isset( $oCase[ 'title' ] ) ? $oCase[ 'title' ] : '' );
 				$sText = str_replace( "\\", "\\'", $oCase[ 'options' ][ 'text' ] );
 				$sLink = str_replace( "\\", "\\'", isset( $oCase[ 'options' ][ 'link' ] ) ? $oCase[ 'options' ][ 'link' ] : '' );
+				if( isset( $oCase[ 'options' ][ 'textlink' ] ) ){
+					$sLink = str_replace( "\\", "\\'", $oCase[ 'options' ][ 'textlink' ] );
+				}
 				$sSvg .= '<g onmousemove="window.oSwitchPanel.showToolTip(evt, \''.$sLabel.'\', \''.$sTitle.'\', \''.$sText.'\', \''.$sLink.'\')" onmouseout="window.oSwitchPanel.hideToolTip()">';
 			}
 			
