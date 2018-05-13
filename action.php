@@ -80,7 +80,7 @@ class action_plugin_switchpanel extends DokuWiki_Action_Plugin {
         return $code;
     }
 
-    function register(&$controller){
+    function register(Doku_Event_Handler $controller){
         $controller->register_hook('TOOLBAR_DEFINE', 'AFTER', $this, 'handle_toolbar', array ());
     }
 
