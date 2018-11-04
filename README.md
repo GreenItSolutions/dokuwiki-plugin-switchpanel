@@ -29,7 +29,7 @@ Coloring networks
 
 ## Coloring labels
 
-![](https://raw.github.com/GreenItSolutions/assets/master/dokuwiki/switchpanel/switchpanel_2.png)
+![](https://raw.github.com/GreenItSolutions/assets/master/dokuwiki/switchpanel/switchpanel_12.png)
 
 ### Example code :
 
