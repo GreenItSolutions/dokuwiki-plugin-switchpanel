@@ -16,14 +16,28 @@
 				$sSvg .= '<g onmousemove="window.oSwitchPanel.showToolTip(evt, \''.$sLabel.'\', \''.$sTitle.'\', \''.$sText.'\', \''.$sLink.'\')" onmouseout="window.oSwitchPanel.hideToolTip()">';
 			}
 			
+			// Case color
 			$sColor = $opt[ 'color' ];
 			if( isset( $oCase[ 'options' ][ 'color' ] ) ){
 				$sColor = $oCase[ 'options' ][ 'color' ];
 			}
+
+			// Label background color
+			$sLabelBgColor = $opt[ 'labelBgColor' ];
+			if( isset( $oCase[ 'options' ][ 'labelBgColor' ] ) ){
+				$sLabelBgColor = $oCase[ 'options' ][ 'labelBgColor' ];
+			}
+
+			// Label text color
+			$sLabelTxtColor = $opt[ 'labelTxtColor' ];
+			if( isset( $oCase[ 'options' ][ 'labelTxtColor' ] ) ){
+				$sLabelTxtColor = $oCase[ 'options' ][ 'labelTxtColor' ];
+			}
+				
 			
 			$sSvg .= '<rect x="'.$iX.'" y="'.$iY.'" width="'.$opt[ 'elementWidth' ].'" height="'.$opt[ 'elementHeight' ].'" fill="'.$sColor.'"/>
-				<rect x="'.$iX.'" y="'.$iY.'" width="'.$opt[ 'elementWidth' ].'" height="'.( $opt[ 'elementHeight' ] / 2.65 ).'" stroke-width="'.( $opt[ 'elementWidth' ] / 30 ).'" stroke="#000000" fill="#ffffff" ry="1.5" rx="1.5"/>
-				<text x="'.( $iX + ( $opt[ 'elementWidth' ] / 2 ) ).'" y="'.( $iY + ( $opt[ 'elementHeight' ] / 3.6 ) ).'" style="font-weight:bold;" text-anchor="middle" font-family="sans-serif" font-size="'.( $opt[ 'elementWidth' ] * 0.27 ).'" fill="#000000">'.$oCase[ 'label' ].'</text>
+				<rect x="'.$iX.'" y="'.$iY.'" width="'.$opt[ 'elementWidth' ].'" height="'.( $opt[ 'elementHeight' ] / 2.65 ).'" stroke-width="'.( $opt[ 'elementWidth' ] / 30 ).'" stroke="#000000" fill="'.$sLabelBgColor.'" ry="1.5" rx="1.5"/>
+				<text x="'.( $iX + ( $opt[ 'elementWidth' ] / 2 ) ).'" y="'.( $iY + ( $opt[ 'elementHeight' ] / 3.6 ) ).'" style="font-weight:bold;" text-anchor="middle" font-family="sans-serif" font-size="'.( $opt[ 'elementWidth' ] * 0.27 ).'" fill="'.$sLabelTxtColor.'">'.$oCase[ 'label' ].'</text>
 				<rect x="'.( $iX + ( $opt[ 'elementWidth' ] / 8 ) ).'" y="'.( $iY + ( $opt[ 'elementHeight' ] / 2 ) ).'" width="'.( $opt[ 'elementWidth' ] / 1.35 ).'" height="'.( $opt[ 'elementHeight' ] / 2.4 ).'" fill="#000000"/>';
 			
 			if( isset( $oCase[ 'title' ] ) ){

@@ -26,6 +26,27 @@ Coloring networks
 </switchpanel>
 ```
 
+
+## Coloring labels
+
+![](https://raw.github.com/GreenItSolutions/assets/master/dokuwiki/switchpanel/switchpanel_2.png)
+
+### Example code :
+
+```
+<switchpanel>
+==text
+Coloring labels
+==line
+1,A1:labelBgColor=#FF6164
+2,B1:labelTxtColor=#FF61ED
+3,C1:labelBgColor=#9361FF,labelTxtColor=#61FF88
+4,D1:labelBgColor=red
+5,E1:labelBgColor=black,labelTxtColor=white
+</switchpanel>
+```
+
+
 ## All types cases
 
 ![](https://raw.github.com/GreenItSolutions/assets/master/dokuwiki/switchpanel/switchpanel_3.png)
@@ -195,6 +216,8 @@ Hide logo
 <switchpanel
     logo="URL OF LOGO"
     logoLink="URL OF LINK"
+    labelBgColor="#fff"
+    labelTxtColor="#000"
     target="_blank"
     showEars=true / false
     case="rj45" (case a default)

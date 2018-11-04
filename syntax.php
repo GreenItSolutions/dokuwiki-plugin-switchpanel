@@ -5,6 +5,7 @@
  * @license	GPL 2 (http://www.gnu.org/licenses/gpl.html)
  * @author	 Bertrand Fruchet <bertrand@greenitsolutions.fr>
  * @author	 Emmanuel Hidalgo <manu@greenitsolutions.fr>
+ * @author	 Benoit Moreau <benoit+github@virtit.fr>
  * 
  * Based on the dokuwiki-plugin-patchpanel plugin (https://github.com/grantemsley/dokuwiki-plugin-patchpanel) by Grant Emsley <grant@emsley.ca>
  */
@@ -17,8 +18,8 @@ if(!defined('DOKU_INC')) die();
  */
 class syntax_plugin_switchpanel extends DokuWiki_Syntax_Plugin {
 	private $_sName = "switchpanel";
-	private $_oTagsContent = array( 'line'=>array( 'number', 'color', 'case', 'labelLeft', 'colorLabelLeft', 'labelRight', 'colorLabelRight' ), 'text'=>array( 'bgColor', 'color', 'size', 'brColor', 'brRadius' ), 'heightBar'=>array( 'height' ) );
-	private $_oTagsItemsContent = array( 'line_items'=>array( 'color', 'text', 'link', 'case', 'target', 'textlink' ) );
+	private $_oTagsContent = array( 'line'=>array( 'number', 'color', 'case', 'labelLeft', 'colorLabelLeft', 'labelRight', 'colorLabelRight', 'labelBgColor', 'labelTxtColor'), 'text'=>array( 'bgColor', 'color', 'size', 'brColor', 'brRadius' ), 'heightBar'=>array( 'height' ) );
+	private $_oTagsItemsContent = array( 'line_items'=>array( 'color', 'text', 'link', 'case', 'target', 'textlink' , 'labelBgColor', 'labelTxtColor') );
 
 	function getType(){ return 'substition'; }
 	function getSort(){ return 155; }
@@ -46,6 +47,8 @@ class syntax_plugin_switchpanel extends DokuWiki_Syntax_Plugin {
 		$opt = array(
 			'logo'=>DOKU_BASE.'lib/plugins/switchpanel/images/greenIt.svg',
 			'logoLink'=>'http://www.greenitsolutions.fr/',
+			'labelBgColor'=>'#fff',
+			'labelTxtColor'=>'#000',
 			'target'=>'_blank',
 			'showEars'=>true,
 			'labelLeft'=>'',
@@ -218,7 +221,7 @@ class syntax_plugin_switchpanel extends DokuWiki_Syntax_Plugin {
 				
 				// propagation properties
 				$oLine[ 'options' ] = array();
-				foreach( array( 'color', 'case', 'labelLeft', 'colorLabelLeft', 'labelRight', 'colorLabelRight' ) as $sProp ){
+				foreach( array( 'color', 'case', 'labelLeft', 'colorLabelLeft', 'labelRight', 'colorLabelRight', 'labelBgColor', 'labelTxtColor') as $sProp ){
 					if( !isset( $oElement[ 'options' ][ $sProp ] ) ){
 						$oElement[ 'options' ][ $sProp ] = $opt[ $sProp ];
 						$oLine[ 'options' ][ $sProp ] = $oElement[ 'options' ][ $sProp ];
