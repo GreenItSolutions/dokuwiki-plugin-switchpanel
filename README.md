@@ -13,7 +13,7 @@
 ==text
 Coloring networks
 ==line
-1,A1:color=#FF6164
+1,Aa:color=#FF6164
 2,B1:color=#FF61ED
 3,C1:color=#9361FF
 4,D1:color=#6176FF
@@ -45,6 +45,45 @@ Coloring labels
 5,E1:labelBgColor=black,labelTxtColor=white
 </switchpanel>
 ```
+
+## Coloured RJ45 LEDs
+
+![](https://raw.github.com/GreenItSolutions/assets/master/dokuwiki/switchpanel/switchpanel_13.png)
+
+### Example code :
+
+```
+<switchpanel>
+==text
+Link Speed &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp; POE Payload
+==line:number=9
+1,OFF
+2,10M:leftLedColor=red
+3,100M:leftLedColor=yellow
+4,1G:leftLedColor=lime
+5,10G:leftLedColor=blue
+6:case=none
+7,OFF
+8,24V:leftLedColor="#666666",rightLedColor=orange
+9,48V:leftLedColor="#666666",rightLedColor=lime
+</switchpanel>
+```
+
+### Exemple usage :
+
+the leftLedColor is:
+
+* OFF : “#666666”(default if no value)
+* 10M : red
+* 100M : yellow
+* 1G : lime
+* 10G : blue
+
+And the rightLedColor is :
+
+* OFF : no POE (default if no value)
+* 24V : orange
+* 48V : lime
 
 
 ## All types cases
@@ -80,7 +119,8 @@ All types cases
 No ears display
 ==line:number=8
 2,of,of:case=of
-==line
+==line:number=8
+2,foo,bar
 </switchpanel>
 ```
 
@@ -112,18 +152,22 @@ Height separator
 
 ### Example code :
 
-```
 <switchpanel>
 ==text
 Popup message information and link
 ==line:number=8
+1,1:text="Hello World",link="https://greenitsolutions.fr/",textlink="GreenITSolutions website"
+8,8:text="<b>From:</b> Office Level, Netgear switch port 1<br><b>To:</b> HP switch port 18<br><b>Speed:</b> 10G <hr> Additional information",link="https://greenitsolutions.fr/",textlink="Documentation"
 ==line
-1,AA
-5,FO:case=fo,color="#80cc28",text="Green It Solutions",link="http://www.greenitsolutions.fr/",textlink="http://www.greenitsolutions.fr/"
+==line
 ==line
 ==line
 </switchpanel>
 ```
+
+You can use HTML tags in the text field for layout :
+
+![](https://raw.github.com/GreenItSolutions/assets/master/dokuwiki/switchpanel/switchpanel_14.png)
 
 ## Text bar information
 
@@ -136,8 +180,8 @@ Popup message information and link
 ==text
 Text bar information
 ==line:number=8
-==text:bgColor=#80cc28,color=#fff,size=20,brColor=#1D611F,brRadius=2
-By Green It Solutions
+==text:bgColor=#80cc28,color=#fff,size=16,brColor=#1D611F,brRadius=2
+By Green IT Solutions
 ==line
 </switchpanel>
 ```
@@ -242,13 +286,14 @@ Hide logo
     screwColor="#fff"
     switchColor="#808080" (backgroud color default)
     >
- 
-==line:number=(number of cases),color=(backgroud color),case=(type of case),labelLeft=(label left),labelRight=(label right),colorLabelLeft=(color of label left),colorLabelRight=(color of label right)
-1,label,title:color=(backgroud color),text=(text of popup message),link=(url of link),case=(type of case),target=(type of link target),labelBgColor=(background color of the case label),labelTxtColor=text color of the case label),leftLedColor=(color of the left LED),rightLedColor(color of the right LED)
+
+==line:number=(number of cases),color=(backgroud color of the line case),case=(type of the line case),labelLeft=(label left of the line),labelRight=(label right of the line),colorLabelLeft=(color of label left),colorLabelRight=(color of label right),labelBgColor=(background color of the case label),labelTxtColor=text color of the case label),leftLedColor=(color of the left LED),rightLedColor(color of the right LED)
 
 ==text:bgColor=(backgroud color),color=(text color),size=(text size),brColor=(border color),brRadius=(border radius)
 
 ==heightBar:heigth=(height bar)
+
+1,label,title:color=(backgroud color),text=(text of popup message),link=(url of link),case=(type of case),target=(type of link target),labelBgColor=(background color of the case label),labelTxtColor=text color of the case label),leftLedColor=(color of the left LED),rightLedColor(color of the right LED)
 
 # this is a comment
 
