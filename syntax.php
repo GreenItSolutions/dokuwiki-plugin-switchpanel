@@ -18,8 +18,8 @@ if(!defined('DOKU_INC')) die();
  */
 class syntax_plugin_switchpanel extends DokuWiki_Syntax_Plugin {
 	private $_sName = "switchpanel";
-	private $_oTagsContent = array( 'line'=>array( 'number', 'color', 'case', 'labelLeft', 'colorLabelLeft', 'labelRight', 'colorLabelRight', 'labelBgColor', 'labelTxtColor'), 'text'=>array( 'bgColor', 'color', 'size', 'brColor', 'brRadius' ), 'heightBar'=>array( 'height' ) );
-	private $_oTagsItemsContent = array( 'line_items'=>array( 'color', 'text', 'link', 'case', 'target', 'textlink' , 'labelBgColor', 'labelTxtColor') );
+	private $_oTagsContent = array( 'line'=>array( 'number', 'color', 'case', 'labelLeft', 'colorLabelLeft', 'labelRight', 'colorLabelRight', 'labelBgColor', 'labelTxtColor', 'leftLedColor', 'rightLedColor' ), 'text'=>array( 'bgColor', 'color', 'size', 'brColor', 'brRadius' ), 'heightBar'=>array( 'height' ) );
+	private $_oTagsItemsContent = array( 'line_items'=>array( 'color', 'text', 'link', 'case', 'target', 'textlink' , 'labelBgColor', 'labelTxtColor', 'leftLedColor', 'rightLedColor' ) );
 
 	function getType(){ return 'substition'; }
 	function getSort(){ return 155; }
@@ -49,6 +49,8 @@ class syntax_plugin_switchpanel extends DokuWiki_Syntax_Plugin {
 			'logoLink'=>'http://www.greenitsolutions.fr/',
 			'labelBgColor'=>'#fff',
 			'labelTxtColor'=>'#000',
+			'leftLedColor'=>'#666666',
+			'rightLedColor'=>'#666666',
 			'target'=>'_blank',
 			'showEars'=>true,
 			'labelLeft'=>'',
@@ -221,7 +223,7 @@ class syntax_plugin_switchpanel extends DokuWiki_Syntax_Plugin {
 				
 				// propagation properties
 				$oLine[ 'options' ] = array();
-				foreach( array( 'color', 'case', 'labelLeft', 'colorLabelLeft', 'labelRight', 'colorLabelRight', 'labelBgColor', 'labelTxtColor') as $sProp ){
+				foreach( array( 'color', 'case', 'labelLeft', 'colorLabelLeft', 'labelRight', 'colorLabelRight', 'labelBgColor', 'labelTxtColor', 'rightLedColor', 'leftLedColor' ) as $sProp ){
 					if( !isset( $oElement[ 'options' ][ $sProp ] ) ){
 						$oElement[ 'options' ][ $sProp ] = $opt[ $sProp ];
 						$oLine[ 'options' ][ $sProp ] = $oElement[ 'options' ][ $sProp ];
@@ -289,7 +291,7 @@ class syntax_plugin_switchpanel extends DokuWiki_Syntax_Plugin {
 						array( 'number'=>$i, 'label'=>'', 
 							'options'=>array( 'color'=>$oElement[ 'options' ][ 'color' ], 'case'=>$oElement[ 'options' ][ 'case' ],
 							'labelLeft'=>$oElement[ 'options' ][ 'labelLeft' ], 'colorLabelLeft'=>$oElement[ 'options' ][ 'colorLabelLeft' ],
-							'labelRight'=>$oElement[ 'options' ][ 'labelRight' ], 'colorLabelRight'=>$oElement[ 'options' ][ 'colorLabelRight' ] ) );
+							'labelRight'=>$oElement[ 'options' ][ 'labelRight' ], 'colorLabelRight'=>$oElement[ 'options' ][ 'colorLabelRight' ], 'labelBgColor'=>$oElement[ 'options' ][ 'labelBgColor' ], 'labelTxTColor'=>$oElement[ 'options' ][ 'labelTxtColor' ], 'leftLedColor'=>$oElement[ 'options' ][ 'leftLedColor' ], 'rightLedColor'=>$oElement[ 'options' ][ 'rightLedColor' ] ) );
 				}			
 				$oData = array();
 				foreach( $oTmpData as $oLine ){

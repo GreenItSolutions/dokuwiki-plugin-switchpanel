@@ -36,6 +36,7 @@
 				
 			
 			$sSvg .= '<rect x="'.$iX.'" y="'.$iY.'" width="'.$opt[ 'elementWidth' ].'" height="'.$opt[ 'elementHeight' ].'" fill="'.$sColor.'"/>
+
 				<rect x="'.$iX.'" y="'.$iY.'" width="'.$opt[ 'elementWidth' ].'" height="'.( $opt[ 'elementHeight' ] / 2.65 ).'" stroke-width="'.( $opt[ 'elementWidth' ] / 30 ).'" stroke="#000000" fill="'.$sLabelBgColor.'" ry="1.5" rx="1.5"/>
 				<text x="'.( $iX + ( $opt[ 'elementWidth' ] / 2 ) ).'" y="'.( $iY + ( $opt[ 'elementHeight' ] / 3.6 ) ).'" style="font-weight:bold;" text-anchor="middle" font-family="sans-serif" font-size="'.( $opt[ 'elementWidth' ] * 0.27 ).'" fill="'.$sLabelTxtColor.'">'.$oCase[ 'label' ].'</text>
 				<line x1="'.( $iX + ( $opt[ 'elementWidth' ] / 8 ) ).'" y1="'.( $iY + ( $opt[ 'elementHeight' ] / 2 ) ).'" x2="'.( ( $iX + ( $opt[ 'elementWidth' ] / 8 ) ) + ( $opt[ 'elementWidth' ] / 1.35 ) ).'" y2="'.( ( $iY + ( $opt[ 'elementHeight' ] / 2 ) ) + ( $opt[ 'elementHeight' ] / 2.4 ) ).'" style="stroke:rgb(255,0,0);stroke-width:1" />

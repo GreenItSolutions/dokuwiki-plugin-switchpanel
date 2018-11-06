@@ -218,6 +218,8 @@ Hide logo
     logoLink="URL OF LINK"
     labelBgColor="#fff"
     labelTxtColor="#000"
+    leftLedColor="#00ff00"
+    rightLedColor="#666666"
     target="_blank"
     showEars=true / false
     case="rj45" (case a default)
@@ -242,7 +244,7 @@ Hide logo
     >
  
 ==line:number=(number of cases),color=(backgroud color),case=(type of case),labelLeft=(label left),labelRight=(label right),colorLabelLeft=(color of label left),colorLabelRight=(color of label right)
-1,label,title:color=(backgroud color),text=(text of popup message),link=(url of link),case=(type of case),target=(type of link target)
+1,label,title:color=(backgroud color),text=(text of popup message),link=(url of link),case=(type of case),target=(type of link target),labelBgColor=(background color of the case label),labelTxtColor=text color of the case label),leftLedColor=(color of the left LED),rightLedColor(color of the right LED)
 
 ==text:bgColor=(backgroud color),color=(text color),size=(text size),brColor=(border color),brRadius=(border radius)
 

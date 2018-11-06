@@ -1,6 +1,6 @@
 base   switchpanel
 author Green It Solutions
-email  manu@greenitsolutions.fr 
+email  support@greenitsolutions.fr 
 date   2018-11-02
 name   Switch Panel Plugin
 desc   Draw switch panel from text description

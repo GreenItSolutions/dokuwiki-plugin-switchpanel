@@ -21,6 +21,16 @@
 			if( isset( $oCase[ 'options' ][ 'color' ] ) ){
 				$sColor = $oCase[ 'options' ][ 'color' ];
 			}
+			// Left LED color
+			$sLeftLedColor = $opt[ 'leftLedColor' ];
+			if( isset( $oCase[ 'options' ][ 'leftLedColor' ] ) ){
+				$sLeftLedColor = $oCase[ 'options' ][ 'leftLedColor' ];
+			}
+			// Right LED color
+			$sRightLedColor = $opt[ 'rightLedColor' ];
+			if( isset( $oCase[ 'options' ][ 'rightLedColor' ] ) ){
+				$sRightLedColor = $oCase[ 'options' ][ 'rightLedColor' ];
+			}
 
 			// Label background color
 			$sLabelBgColor = $opt[ 'labelBgColor' ];
@@ -43,9 +53,12 @@
 			$sSvg .= '<rect x="'.$iX.'" y="'.$iY.'" width="'.$opt[ 'elementWidth' ].'" height="'.$opt[ 'elementHeight' ].'" fill="'.$sColor.'"/>
 				<rect x="'.$iX.'" y="'.$iY.'" width="'.$opt[ 'elementWidth' ].'" height="'.( $opt[ 'elementHeight' ] / 2.65 ).'" stroke-width="'.( $opt[ 'elementWidth' ] / 30 ).'" stroke="#000000" fill="'.$sLabelBgColor.'" ry="1.5" rx="1.5"/>
 				<text x="'.( $iX + ( $opt[ 'elementWidth' ] / 2 ) ).'" y="'.( $iY + ( $opt[ 'elementHeight' ] / 3.6 ) ).'" style="font-weight:bold;" text-anchor="middle" font-family="sans-serif" font-size="'.( $opt[ 'elementWidth' ] * 0.27 ).'" fill="'.$sLabelTxtColor.'">'.$oCase[ 'label' ].'</text>
-				<rect x="'.( $iX + ( $opt[ 'elementWidth' ] / 2.7 ) ).'" y="'.( $iY + ( $opt[ 'elementHeight' ] / 1.58 ) ).'" width="'.( $opt[ 'elementWidth' ] / 4 ).'" height="'.( $opt[ 'elementHeight' ] / 3.4 ).'" fill="#000000"/>
-				<rect x="'.( $iX + ( $opt[ 'elementWidth' ] / 3.5 ) ).'" y="'.( $iY + ( $opt[ 'elementHeight' ] / 1.58 ) ).'" width="'.( $opt[ 'elementWidth' ] / 2.35 ).'" height="'.( $opt[ 'elementHeight' ] / 4 ).'" fill="#000000"/>
-				<rect x="'.( $iX + ( $opt[ 'elementWidth' ] / 8 ) ).'" y="'.( $iY + ( $opt[ 'elementHeight' ] / 2 ) ).'" width="'.( $opt[ 'elementWidth' ] / 1.35 ).'" height="'.( $opt[ 'elementHeight' ] / 3 ).'" fill="#000000"/>
+			// RIGHT LED
+				<rect x="'.( $iX + ( $opt[ 'elementWidth' ] / 1.625 ) ).'" y="'.( $iY + ( $opt[ 'elementHeight' ] / 1.2 ) ).'" width="'.( $opt[ 'elementWidth' ] / 4 ).'" height="'.( $opt[ 'elementHeight' ] / 10.5 ).'" fill="'.$sRightLedColor.'" stroke-width="'.( $opt[ 'elementWidth' ] / 60  ).'" stroke="#E5E4E2" />
+			// LEFT LED
+				<rect x="'.( $iX + ( $opt[ 'elementWidth' ] / 8 ) ).'" y="'.( $iY + ( $opt[ 'elementHeight' ] / 1.2 ) ).'" width="'.( $opt[ 'elementWidth' ] / 4 ).'" height="'.( $opt[ 'elementHeight' ] / 10.5 ).'" fill="'.$sLeftLedColor.'" stroke-width="'.( $opt[ 'elementWidth' ] / 60 ).'" stroke="#E5E4E2" />
+			<polygon points="'.( $iX + ( $opt[ 'elementWidth' ] / 3.5 ) ).','.( $iY + ( $opt[ 'elementHeight' ] / 1.2 ) ).' '.( $iX + ( $opt[ 'elementWidth' ] / 3.5 ) ).','.( $iY + ( $opt[ 'elementHeight' ] / 1.14 ) ).' '.( $iX + ( $opt[ 'elementWidth' ] / 2.7 ) ).','.( $iY + ( $opt[ 'elementHeight' ] / 1.14 ) ).' '.( $iX + ( $opt[ 'elementWidth' ] / 2.7 ) ).','.( $iY + ( $opt[ 'elementHeight' ] / 1.08 ) ).' '.( $iX + ( $opt[ 'elementWidth' ] / 1.61 ) ).','.( $iY + ( $opt[ 'elementHeight' ] / 1.08 ) ).' '.( $iX + ( $opt[ 'elementWidth' ] / 1.61 ) ).','.( $iY + ( $opt[ 'elementHeight' ] / 1.14 ) ).' '.( $iX + ( $opt[ 'elementWidth' ] / 1.4 ) ).','.( $iY + ( $opt[ 'elementHeight' ] / 1.14 ) ).' '.( $iX + ( $opt[ 'elementWidth' ] / 1.4 ) ).','.( $iY + ( $opt[ 'elementHeight' ] / 1.2 ) ).' '.( $iX + ( $opt[ 'elementWidth' ] / 1.157 ) ).','.( $iY + ( $opt[ 'elementHeight' ] / 1.2 ) ).' '.( $iX + ( $opt[ 'elementWidth' ] / 1.157 ) ).','.( $iY + ( $opt[ 'elementHeight' ] / 2 ) ).' '.( $iX + ( $opt[ 'elementWidth' ] / 8 ) ).','.( $iY + ( $opt[ 'elementHeight' ] / 2 ) ).' '.( $iX + ( $opt[ 'elementWidth' ] / 8 ) ).','.( $iY + ( $opt[ 'elementHeight' ] / 1.2 ) ).'" style="fill:000000" stroke-width="'.( $opt[ 'elementWidth' ] / 60  ).'" stroke="#E5E4E2" />
+
 				'.$sConductors;
 			
 			if( isset( $oCase[ 'title' ] ) ){
