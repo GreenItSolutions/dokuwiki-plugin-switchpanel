@@ -152,6 +152,7 @@ Height separator
 
 ### Example code :
 
+```
 <switchpanel>
 ==text
 Popup message information and link
