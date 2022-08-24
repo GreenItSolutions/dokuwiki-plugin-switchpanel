@@ -28,3 +28,8 @@
 	color: #176782;
 	padding:0 5px;
 }
+
+svg.plugin-switchpanel {
+	width: auto;
+	height: auto;
+}
